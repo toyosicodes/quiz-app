@@ -1,27 +1,25 @@
-import { questions } from "./questions";
-import { options } from "./options";
 import { useEffect, useState } from "react";
+import Question from "./questions";
+import { questions } from "./questions";
 
 const Quiz = () => {
-  const [optionsArray, setOptionsArray] = useState(options);
-  const shuffleOptions = () => {
-    const shuffledOptions = [...options].sort(() => Math.random() - 0.5);
-    setOptionsArray(shuffledOptions);
-    console.log(shuffledOptions);
-  };
-
-  useEffect(() => {
-    shuffleOptions();
-  }, []);
-
+  const [originalQuestions, setOriginalQuestions] = useState(questions);
+  const [selectedQuestion, setSelectedQuestion] = useState({});
+  const [correctOption, setCorrectOption] = useState([]);
   return (
     <div className="quiz">
-      <div className="question">
-        <p>{questions[0].question}</p>
-        <p>{optionsArray[0].option}</p>
-        <p>{optionsArray[1].option}</p>
-        <p>{optionsArray[2].option}</p>
-      </div>
+      <h1>Pop Culture Quiz: Pop Music Edition!</h1>
+      {questions.map((ques) => (
+        <Question
+          key={Math.random()}
+          ques={ques}
+          originalQuestions={originalQuestions}
+          selectedQuestion={selectedQuestion}
+          setSelectedQuestion={setSelectedQuestion}
+          correctOption={correctOption}
+          setCorrectOption={setCorrectOption}
+        />
+      ))}
     </div>
   );
 };

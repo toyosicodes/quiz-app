@@ -2,7 +2,7 @@ import "./App.css";
 import Homepage from "./components/Homepage";
 import Quiz from "./components/Quiz";
 import { Routes, Route } from "react-router-dom";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   return (

@@ -1,0 +1,46 @@
+{/* <div className="question">
+        {optionsArray.map((option) => (
+          <Option
+            option={option}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+            shuffledOptions={shuffledOptions}
+            key={option.id}
+            correctOption={correctOption}
+            setCorrectOption={setCorrectOption}
+            setWrongOption={setWrongOption}
+            optionsArray={optionsArray}
+          />
+        ))}
+      </div>
+      <div className="test">
+        {/* <p onClick={testFunc}>Show my values!</p> */}
+        {questionsAndAnswers.map((arr) => (
+          <div>
+            <p className="question-text">{arr[0].question}</p>
+            <div className="options-container">
+              <div className="col-1-of-2">
+                {/* <p onClick={handleSelectedOption} className="option">
+                  {arr[1].optionA}
+                </p> */}
+                <Option
+                  option={option}
+                  selectedOption={selectedOption}
+                  setSelectedOption={setSelectedOption}
+                  shuffledOptions={shuffledOptions}
+                  key={option.id}
+                  correctOption={correctOption}
+                  setCorrectOption={setCorrectOption}
+                  setWrongOption={setWrongOption}
+                  optionsArray={optionsArray}
+                />
+                <p className="option">{arr[3].optionC}</p>
+              </div>
+              <div className="col-1-of-2">
+                <p className="option">{arr[2].optionB}</p>
+                <p className="option">{arr[4].optionD}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
